@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <img src="/assets/images/logo.png" alt="" class="img-logo">
+    <img src="/assets/images/logo.png" alt="" class="img-login">
 
     <!-- 登陆的盒子 -->
-    <div id="logo">
-        <div class="logo-title">
+    <div class="login">
+        <div class="login-title">
         </div>
         <form class="layui-form" action="">
 
@@ -28,7 +28,7 @@
             <!-- 第二行 密码 -->
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-password"></i>
-                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                <input type="password" name="password" required lay-verify="required |len" placeholder="请输入密码"
                     autocomplete="off" class="layui-input">
             </div>
 
@@ -48,8 +48,8 @@
 
 
     <!-- 注册的盒子 -->
-    <div id="register">
-        <div class="logo-title">
+    <div class="register">
+        <div class="login-title">
 
         </div>
         <form class="layui-form" action="">
@@ -64,14 +64,14 @@
             <!-- 第二行 密码 -->
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-password"></i>
-                <input type="password" name="password" required lay-verify="required" placeholder="请输入密码"
+                <input type="password" name="password" required lay-verify="required|len" placeholder="请输入密码"
                     autocomplete="off" class="layui-input pwd">
             </div>
 
             <!-- 第3行 重复密码 -->
             <div class="layui-form-item">
                 <i class="layui-icon layui-icon-password"></i>
-                <input type="password" required lay-verify="required" placeholder="请确认密码" autocomplete="off"
+                <input type="password" required lay-verify="required |len|same" placeholder="请确认密码" autocomplete="off"
                     class="layui-input">
             </div>
 

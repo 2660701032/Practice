@@ -1,21 +1,21 @@
 //              点击切换注册和登录功能
-$('#logo a').click(function () {
-    $('#logo').hide().next().show();
+$('.login a').click(function () {
+    $('.login').hide().next().show();
 })
 
 
-$('#register a').click(function () {
-    $('#logo').show().next().hide();
+$('.register a').click(function () {
+    $('.login').show().next().hide();
 })
 
 
 //            实现注册功能
 //表单提交 阻止默认行为 收取用户名密码 提交接口
-$('#register form').on('submit', function (e) {
-    e.prevnetDefault();
+$('.register form').on('submit', function (e) {
+    e.preventDefault();
     //收集数据
     var data = $(this).serialize();
-    // console.log(data);
+    console.log(data);
     $.ajax({
         type: 'POST',
         url: 'http://ajax.frontend.itheima.net/api/reguser',
@@ -23,8 +23,8 @@ $('#register form').on('submit', function (e) {
         success: function (res) {
             layer.msg(res.message);
             if (res.status === 0) {
-                $('#logo').show().next().hide();
-                $('#register form')[0].reset();//reset是dom方法 所以要把jq转换成js
+                $('.login').show().next().hide();
+                $('.register form')[0].reset();//reset是dom方法 所以要把jq转换成js
             }
         }
     });
@@ -41,7 +41,7 @@ var form = layui.form;
 form.verify({
     len: [/^\S{6,12}$/, '长度必须6-12位，不能有空格'],
     same: function (rev) {
-        var pwd = $('#register .pwd').val();
+        var pwd = $('.register .pwd').val();
         if (pwd !== rev) {
             return '两次密码不一致';
         }
@@ -50,8 +50,8 @@ form.verify({
 
 
 //          登录功能
-$('#logo form').on('submit', function (e) {
-    e.prevnetDefault();
+$('.login form').on('submit', function (e) {
+    e.preventDefault();
     $.ajax({
         type: 'POST',
         url: 'http://ajax.frontend.itheima.net/api/login',

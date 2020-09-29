@@ -3,7 +3,7 @@ html,body{
     background: url('/assets/images/login_bg.jpg') no-repeat 0 0 /cover;
     overflow: hidden;
 }
-#logo,#register{
+.login,.register{
     background-color: #fff;
     width: 400px;
     height: 310px;
@@ -13,14 +13,14 @@ html,body{
     transform: translate(-50%,-50%);
 
 }
-.img-logo{
+.img-login{
     margin: 20px 0 0 130px;
 }
-.logo-title{
+.login-title{
     height: 60px;
     background: url('/assets/images/login_title.png')no-repeat center;
 }
-#register{
+.register{
 display: none;
 }
 /* 表单 */
